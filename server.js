@@ -1,8 +1,17 @@
 import express from "express";
-
+const app = express();
 const PORT = process.env.PORT || 8000;
 
-const app = express();
+//DB Connection
+import { conMongoDb } from "./config/dbConfig.js";
+conMongoDb();
+
+//Middleware
+app.use(express.json());
+
+import userRouter from "./routers/userRouter.js";
+
+app.use("/api/v1/users", userRouter);
 
 app.get("/", (req, res) => {
   res.json({
