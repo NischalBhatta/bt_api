@@ -8,11 +8,12 @@ const router = express.Router();
 router.post("/", async (req, res, next) => {
   try {
     // get user obj
+    const { password, ...rest } = req.body;
     //encrypt password
-    const hashPass = hashPassword(req.body.password);
-    console.log(hashPass);
+    const hashPass = await hashPassword(password);
+    // console.log(hashPass);
     // user data verification
-    const user = await insertUser(req.body);
+    const user = await insertUser({ ...rest, password: hashPass });
     user?._id
       ? res.json({
           status: "success",
@@ -27,6 +28,7 @@ router.post("/", async (req, res, next) => {
       status: "Error",
       message: error.message,
     });
+    console.log(error);
   }
 });
 
