@@ -6,5 +6,8 @@ export const insertUser = async (userObj) => {
 };
 
 // REad
+export const getUserByEmail = (email) => {
+  return userSchema.findOne({ email: email });
+};
 // Update
 // Delete
