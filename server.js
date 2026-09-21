@@ -11,6 +11,8 @@ conMongoDb();
 app.use(express.json());
 app.use(cors());
 
+console.log(process.env.JWT_SECRET);
+
 import userRouter from "./routers/userRouter.js";
 
 app.use("/api/v1/users", userRouter);
