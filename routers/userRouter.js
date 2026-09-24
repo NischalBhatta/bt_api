@@ -2,6 +2,7 @@ import express from "express";
 import { getUserByEmail, insertUser } from "../models/user/userModel.js";
 import { comparePassword, hashPassword } from "../utils/bcryptjs.js";
 import { signJWT } from "../utils/jwt.js";
+import { auth } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
@@ -78,5 +79,23 @@ router.post("/login", async (req, res, next) => {
 });
 
 // User Dashboard
+
+//User provile from the accessJWT
+
+router.get("/", auth, (req, res) => {
+  try {
+    const user = req.userInfo;
+
+    res.json({
+      status: "success",
+      message: "Here is the user Profile",
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "error",
+      error: error.message,
+    });
+  }
+});
 
 export default router;

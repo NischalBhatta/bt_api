@@ -3,8 +3,8 @@
 ## User
 
 ### GET User
-GET http://localhost:8000
-
+GET http://localhost:8000/api/v1/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5AZy5jb20iLCJpYXQiOjE3OTAyNTMzMjQsImV4cCI6MTc5MDI1MzM4NH0.thD4nyYjLYJm0tT_ZkoyvRKAzNW2FLYGBmYp-GfxBsU
 ### SignUp User
 POST http://localhost:8000/api/v1/users
 Content-Type: application/json
