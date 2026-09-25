@@ -89,6 +89,7 @@ router.get("/", auth, (req, res) => {
     res.json({
       status: "success",
       message: "Here is the user Profile",
+      user,
     });
   } catch (error) {
     res.status(500).json({
