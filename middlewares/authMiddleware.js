@@ -29,7 +29,4 @@ export const auth = async (req, res, next) => {
       error: error.message,
     });
   }
-
-  //4. get user email from token
-  //5. get user by email
 };
