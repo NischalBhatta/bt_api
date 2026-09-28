@@ -24,3 +24,16 @@ Content-Type: application/json
     "password": "1111"
 }
 
+
+### Post new transaction
+POST http://localhost:8000/api/v1/transactions
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5AZy5jb20iLCJpYXQiOjE3OTA1NjQ2MTksImV4cCI6MTc5MDY1MTAxOX0.twZ8MaQE-pceCWJbGGwW-weuhsgH_gnfcBpF1zHtazE
+
+{
+    "type": "Income",
+  "title": "Salary",
+ "amount": "2000",
+  "tdate": "23-09-2026"
+}
+
