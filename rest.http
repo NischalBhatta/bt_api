@@ -37,3 +37,6 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5AZy5jb20iLCJp
   "tdate": "2026-09-27"
 }
 
+### Get all Transaction for a user
+GET http://localhost:8000/api/v1/transactions
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5AZy5jb20iLCJpYXQiOjE3OTA1Njg3OTEsImV4cCI6MTc5MDY1NTE5MX0.EUjaRNdKOPASJN84L9Zk2_DcWufrhll8eDmf1Umr43U
