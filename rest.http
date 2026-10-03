@@ -28,11 +28,11 @@ Content-Type: application/json
 ### Post new transaction
 POST http://localhost:8000/api/v1/transactions
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5AZy5jb20iLCJpYXQiOjE3OTA1NjQ2MTksImV4cCI6MTc5MDY1MTAxOX0.twZ8MaQE-pceCWJbGGwW-weuhsgH_gnfcBpF1zHtazE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5AZy5jb20iLCJpYXQiOjE3OTEwMDMzODQsImV4cCI6MTc5MTA4OTc4NH0.JvrgiSdIr6FMmCTbnbVXj0bT6nlxcIM9CZ16eVc-6Qc
 
 {
     "type": "Income",
-  "title": "Salary",
+  "title": "Land sell",
  "amount": "2000",
   "tdate": "2026-09-27"
 }
@@ -40,3 +40,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5AZy5jb20iLCJp
 ### Get all Transaction for a user
 GET http://localhost:8000/api/v1/transactions
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5AZy5jb20iLCJpYXQiOjE3OTA1Njg3OTEsImV4cCI6MTc5MDY1NTE5MX0.EUjaRNdKOPASJN84L9Zk2_DcWufrhll8eDmf1Umr43U
+
+
+### Delete transaction
+DELETE http://localhost:8000/api/v1/transactions
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5AZy5jb20iLCJpYXQiOjE3OTEwMDMzODQsImV4cCI6MTc5MTA4OTc4NH0.JvrgiSdIr6FMmCTbnbVXj0bT6nlxcIM9CZ16eVc-6Qc
+
+["6ac08b296fa3ea2968433344", "6abe6890bd7a06685a93b12e"]

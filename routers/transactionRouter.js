@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  deleteTransaction,
   getAllTransaction,
   insertTransaction,
 } from "../models/transaction/transactionModel.js";
@@ -40,6 +41,31 @@ router.get("/", async (req, res, next) => {
       response,
     });
   } catch (error) {
+    res.json({
+      status: "error",
+      message: error.message,
+    });
+  }
+});
+
+//Delete transaction
+router.delete("/", async (req, res, next) => {
+  try {
+    //recieve ids of the transaction and id of the user
+    const ids = req.body;
+    const { _id } = req.userInfo;
+    console.log(ids, _id);
+
+    //perform the deletion query
+    const result = await deleteTransaction(_id, ids);
+
+    //response recieved
+    res.json({
+      status: "success",
+      message: result.deletedCount + " transaction successfully deleted",
+    });
+  } catch (error) {
+    console.log(error);
     res.json({
       status: "error",
       message: error.message,

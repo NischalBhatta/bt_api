@@ -12,3 +12,8 @@ export const getAllTransaction = async (userId) => {
   }
   return await TransactionSchema.find({ userId });
 };
+
+//delete query
+export const deleteTransaction = async (userId, idsToDelete) => {
+  return TransactionSchema.deleteMany({ userId, _id: { $in: idsToDelete } });
+};
